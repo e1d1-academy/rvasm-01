@@ -6,7 +6,7 @@ ascii2uint32:
     # a2: number of ascii chars
     # allocate stack space, align multiple of 16
     addi sp, sp, -16
-    sw ra, 0(sp)
+    sd ra, 0(sp)
 
 
     # process the ascii string from back
@@ -51,7 +51,7 @@ au_loop:
     addi a1, a1, 1
     j au_loop
 au_end:
-    lw ra, 0(sp)
+    ld ra, 0(sp)
     addi sp, sp, 16
     ret
 
@@ -67,7 +67,7 @@ au_nibble_09:
 uint32ascii:
     # allocate stack space, align multiple of 16
     addi sp, sp, -32
-    sw ra, 16(sp)
+    sd ra, 16(sp)
 
     # put chars on stack
     # we use 0(sp) to 15(sp), use t2
@@ -104,6 +104,6 @@ ua_pop:
     addi a1, a1, 1
     j ua_pop
 ua_end:
-    lw ra, 16(sp)
+    ld ra, 16(sp)
     addi sp, sp, 32
     ret
