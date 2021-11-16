@@ -104,6 +104,10 @@ ua_pop:
     addi a1, a1, 1
     j ua_pop
 ua_end:
+    # add carriage return
+    li t0, 0xa
+    sb t0, 0(a1)
+
     ld ra, 16(sp)
     addi sp, sp, 32
     ret
