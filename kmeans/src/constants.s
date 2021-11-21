@@ -1,0 +1,4 @@
+.equ MAX_VALUES, 100
+.equ DIM, 2
+.equ MAX_NB_CLUSTERS, 5
+.equ NB_ITERATIONS, 10
